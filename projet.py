@@ -20,6 +20,13 @@ def lit_fasta (nom_fichier) :
     sequence_dict[nom_fichier.split(".")[0]] = proteome
     return sequence_dict
 
+def database_length(sequence_dict) :
+    genome_size = 0
+    for sequence in sequence_dict[list(sequence_dict.keys())[0]] :
+        genome_size += len(sequence)
+    return genome_size
+
 if __name__ == "__main__":
     fasta_file, query = get_argument(sys.argv)
-    proteome = lit_fasta(fasta_file)
+    sequence_dict = lit_fasta(fasta_file)
+    genome_size = database_length(sequence_dict)
