@@ -18,7 +18,7 @@ def lit_fasta (nom_fichier) :
             proteome.append(str(record.seq)[30:])
     fasta_file.close()
     sequence_dict[nom_fichier.split(".")[0]] = proteome
-    return sequence_dict
+    return proteome #sequence_dict
 
 def database_length(sequence_dict) :
     genome_size = 0
