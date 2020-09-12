@@ -4,7 +4,7 @@ import sys
 
 #Ce programme python permet de récupérer, en ligne commande, le nom d'un fichier fasta (deuxième argument). Puis d'en retourner la taille de la séquence ainsi qu'une liste de k-mer de taille 3.
 
-def lit_fasta (nom_fichier) :
+def lit_fasta_max (nom_fichier) :
 	Seq_query = []
 	with open(nom_fichier, "r") as fasta_file:
 		for record in SeqIO.parse(fasta_file, "fasta"):
